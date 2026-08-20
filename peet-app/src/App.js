@@ -1,27 +1,31 @@
-import React from "react";
-import Header from "./Component/Header";
-import MovieList from "./Component/MovieList";
-import Footer from "./Component/Footer";
-import Greeting from "./Component/Greeting";
-import Card from "./Component/Card";
+import ProfileCard from './Component/ProfileCard';
+import './App.css';
 
-const students = [
-  { id: 1, name: 'ฝน', year: 3 },
-  { id: 2, name: 'เต้ย', year: 2 },
-  { id: 3, name: 'มายด์', year: 4 },
+const members = [
+  { id: 1, name: 'สรินทร์ชัย มีศิลป์', nickname: 'ปลื้ม',
+    major: 'เทคโนโลยีสารสนเทศ', favorites: ['ชาเขียว', 'หมา'] },
+    { id: 2, name: 'กฤษฎา นาคะพงศ์', nickname: 'พีข',
+    major: 'เทคโนโลยีสารสนเทศ', favorites: ['เกี๊ยว', 'นก'] },
+    { id: 3, name: 'ชาญชัญญ์ เอื้อประเสริฐ', nickname: 'โจ้',
+    major: 'เทคโนโลยีสารสนเทศ', favorites: ['โกโก้', 'วัว'] },
+  // 👉 เพิ่มสมาชิกคนอื่น ๆ ของกลุ่มที่นี่
 ];
 
 function App() {
   return (
-    <div>
-      <Card title="ประกาศ">
-        <p>สัปดาห์หน้าเรียนเรื่อง <b>State & Forms</b></p>
-        <p>อย่าลืม push การบ้านขึ้น GitHub!</p>
-      </Card>
-      <h1>รายชื่อนักศึกษา</h1>
-      {students.map((s) => (
-        <Greeting key={s.id} name={s.name} year={s.year} />
-      ))}
+    <div className="container">
+      <h1>สมาชิกกลุ่มของเรา</h1>
+      <div className="card-row">
+        {members.map((m) => (
+          <ProfileCard
+            key={m.id}
+            name={m.name}
+            nickname={m.nickname}
+            major={m.major}
+            favorites={m.favorites}
+          />
+        ))}
+      </div>
     </div>
   );
 }
