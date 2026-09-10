@@ -10,7 +10,7 @@ function Home() {
 
       <div className="mx-auto mt-8 max-w-5xl">
         <MovieCard title="inline mandatorian and Grogu" year={2026} />
-        <MovieCard title="Your Name." year={2016}/>
+         <MovieCard title="Your Name." year={2016}/>
         <MovieCard title="Spider-Man: Brand New Day" year={2026}/>
         <h2 className="mt-8 text-2xl font-bold text-slate-800">ดูหนังเพิ่มเติม</h2>
         <div classname="mx-auto mt-8 max-w-md"></div>
